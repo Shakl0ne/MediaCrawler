@@ -18,9 +18,8 @@ COOKIES = ""
 SORT_TYPE = "popularity_descending"
 # 具体值参见media_platform.xxx.field下的枚举值，暂时只支持抖音
 PUBLISH_TIME_TYPE = 0
-CRAWLER_TYPE = (
-    "search"  # 爬取类型，search(关键词搜索) | detail(帖子详情)| creator(创作者主页数据)
-)
+CRAWLER_TYPE = "search"  # 爬取类型，search(关键词搜索) | detail(帖子详情)| creator(创作者主页数据)
+
 # 自定义User Agent（暂时仅对XHS有效）
 UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0'
 
@@ -49,7 +48,7 @@ SAVE_LOGIN_STATE = True
 # 是否启用CDP模式 - 使用用户现有的Chrome/Edge浏览器进行爬取，提供更好的反检测能力
 # 启用后将自动检测并启动用户的Chrome/Edge浏览器，通过CDP协议进行控制
 # 这种方式使用真实的浏览器环境，包括用户的扩展、Cookie和设置，大大降低被检测的风险
-ENABLE_CDP_MODE = True
+ENABLE_CDP_MODE = False
 
 # CDP调试端口，用于与浏览器通信
 # 如果端口被占用，系统会自动尝试下一个可用端口
@@ -85,13 +84,13 @@ START_PAGE = 1
 CRAWLER_MAX_NOTES_COUNT = 200
 
 # 并发爬虫数量控制
-MAX_CONCURRENCY_NUM = 4
+MAX_CONCURRENCY_NUM = 1
 
 # 是否开启爬图片模式, 默认不开启爬图片
 ENABLE_GET_IMAGES = True
 
 # 是否开启爬评论模式, 默认开启爬评论
-ENABLE_GET_COMMENTS = True
+ENABLE_GET_COMMENTS = False
 
 # 爬取一级评论的数量控制(单视频/帖子)
 CRAWLER_MAX_COMMENTS_COUNT_SINGLENOTES = 10
@@ -110,38 +109,30 @@ ENABLE_GET_SUB_COMMENTS = False
 
 # 指定小红书需要爬虫的笔记URL列表, 目前要携带xsec_token和xsec_source参数
 XHS_SPECIFIED_NOTE_URL_LIST = [
-    "https://www.xiaohongshu.com/explore/66fad51c000000001b0224b8?xsec_token=AB3rO-QopW5sgrJ41GwN01WCXh6yWPxjSoFI9D5JIMgKw=&xsec_source=pc_search"
     # ........................
 ]
 
 
 # 指定抖音需要爬取的ID列表
 DY_SPECIFIED_ID_LIST = [
-    "7280854932641664319",
-    "7202432992642387233",
     # ........................
 ]
 
 # 指定快手平台需要爬取的ID列表
-KS_SPECIFIED_ID_LIST = ["3xf8enb8dbj6uig", "3x6zz972bchmvqe"]
+KS_SPECIFIED_ID_LIST = []
 
 # 指定B站平台需要爬取的视频bvid列表
 BILI_SPECIFIED_ID_LIST = [
-    "BV1d54y1g7db",
-    "BV1Sz4y1U77N",
-    "BV14Q4y1n7jz",
     # ........................
 ]
 
 # 指定微博平台需要爬取的帖子列表
 WEIBO_SPECIFIED_ID_LIST = [
-    "4982041758140155",
     # ........................
 ]
 
 # 指定weibo创作者ID列表
 WEIBO_CREATOR_ID_LIST = [
-    "5533390220",
     # ........................
 ]
 
@@ -150,47 +141,36 @@ TIEBA_SPECIFIED_ID_LIST = []
 
 # 指定贴吧名称列表，爬取该贴吧下的帖子
 TIEBA_NAME_LIST = [
-    # "盗墓笔记"
+    # ........................
 ]
 
 TIEBA_CREATOR_URL_LIST = [
-    "https://tieba.baidu.com/home/main/?id=tb.1.7f139e2e.6CyEwxu3VJruH_-QqpCi6g&fr=frs",
     # ........................
 ]
 
 # 指定小红书创作者ID列表
 XHS_CREATOR_ID_LIST = [
-    # "5d50849c000000001000f3c7",     # 波波子
-    # "58d62d036a6a6945e2c60113",
-    # "5a0a6c5111be106109d413a9",
-    # "60442edf000000000100023c",
-    # "61f954b60000000010004efa",
-    "670399e9000000001d020042",
     # ........................
 ]
 
 # 指定Dy创作者ID列表(sec_id)
 DY_CREATOR_ID_LIST = [
-    "MS4wLjABAAAATJPY7LAlaa5X-c8uNdWkvz0jUGgpw4eeXIwu_8BhvqE",
     # ........................
 ]
 
 # 指定bili创作者ID列表(sec_id)
 BILI_CREATOR_ID_LIST = [
-    "20813884",
     # ........................
 ]
 
 # 指定快手创作者ID列表
 KS_CREATOR_ID_LIST = [
-    "3x4sm73aye7jq7i",
     # ........................
 ]
 
 
 # 指定知乎创作者主页url列表
 ZHIHU_CREATOR_URL_LIST = [
-    "https://www.zhihu.com/people/yd1234567",
     # ........................
 ]
 
